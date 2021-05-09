@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Save Student</title>
+<!-- Required meta tags -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<h3>Students Directory</h3>
+		<p class="h4 mb-4">Save Student</p>
+
+		<form action="#" th:action="@{/api/addStudent}" th:object="${student}"
+			method="POST">
+			<!-- Add hidden form field to perform update -->
+			<input type="hidden" th:field="*{id}"/>
+			<label>Student Name</label>
+			<input type="text" th:field="*{studentName}" class="form-control mb-4 col-4" >
+			<label>Age</label>
+			<input type="number" th:field="*{age}" class="form-control mb-4 col-4" placeholder="Age" value = "">
+			<!--  input type="number" th:field="*{classIn}" class="form-control mb-4 col-4" placeholder="Class" value = "">
+			-->
+			<label>Class</label>
+			<select th:field="*{classIn}" class="form-control mb-4 col-4" placeholder="Class">
+   			 <option th:value="'1'" th:text="1"></option>
+   			 <option th:value="'2'" th:text="2"></option>
+   			 <option th:value="'3'" th:text="3"></option>
+   			 <option th:value="'4'" th:text="4"></option>
+   			 <option th:value="'5'" th:text="5"></option>
+   			 <option th:value="'6'" th:text="6"></option>
+   			 <option th:value="'7'" th:text="7"></option>
+   			 <option th:value="'8'" th:text="8"></option>
+   			 <option th:value="'9'" th:text="9"></option>
+   			 <option th:value="'10'" th:text="10"></option>
+   			 <option th:value="'11'" th:text="11"></option>
+   			 <option th:value="'12'" th:text="12"></option>
+			</select>
+			<button type="submit" class="btn btn-info col-2">Save</button>
+			
+			
+			</form>
+	<hr>
+	<a th:href="@{/api/students}">Back to Students</a>
+	
+	</div>
+
+
+</body>
+</html>
